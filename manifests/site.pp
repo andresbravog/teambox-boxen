@@ -35,7 +35,7 @@ include chrome
 include firefox
 
 class { 'osx::global::key_repeat_delay':
-  delay => 10
+  delay => 1
 }
 
 include vim
