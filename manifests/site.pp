@@ -110,6 +110,28 @@ node default {
   include hub
   include nginx
 
+  git::config::global { 'core.editor':
+    value  => 'vi'
+  }
+  git::config::global { 'color.ui':
+    value  => 'true'
+  }
+  git::config::global { 'alias.ci':
+    value  => 'commit'
+  }
+  git::config::global { 'alias.co':
+    value  => 'checkout'
+  }
+  git::config::global { 'alias.st':
+    value  => 'status'
+  }
+  git::config::global { 'alias.br':
+    value  => 'branch'
+  }
+  git::config::global { 'alias.funcdiff':
+    value  => '!sh -c "git show \"\$1:\$3\" | sed -n \"/^[^ \t].*\$4(/,/^}/p\" > .tmp1 && git show \"\$2:\$3\" | sed -n \"/^[^ \t].*\$4(/,/^}/p\" > .tmp2 && git diff --no-index .tmp1 .tmp2"'
+  }
+
   # fail if FDE is not enabled
   if $::root_encrypted == 'no' {
     fail('Please enable full disk encryption and try again')
