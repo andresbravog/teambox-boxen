@@ -4,54 +4,54 @@ require gcc
 
 # include the osx module referenced in my Puppetfile with the line
 # github "osx"
-include osx::global::disable_key_press_and_hold
-include osx::global::enable_keyboard_control_access
-include osx::global::expand_print_dialog
-include osx::global::expand_save_dialog
-include osx::disable_app_quarantine
-include osx::no_network_dsstores
-include osx::global::key_repeat_delay
-include osx::global::key_repeat_rate
-include osx::universal_access::cursor_size
+# include osx::global::disable_key_press_and_hold
+# include osx::global::enable_keyboard_control_access
+# include osx::global::expand_print_dialog
+# include osx::global::expand_save_dialog
+# include osx::disable_app_quarantine
+# include osx::no_network_dsstores
+# include osx::global::key_repeat_delay
+# include osx::global::key_repeat_rate
+# include osx::universal_access::cursor_size
 
 # include the sublime_text_2 module referenced in my Puppetfile with the line
 # github "sublime_text_2"
-include sublime_text_2
-sublime_text_2::package { 'Emmet':
-  source => 'sergeche/emmet-sublime'
-}
+# include sublime_text_2
+# sublime_text_2::package { 'Emmet':
+#   source => 'sergeche/emmet-sublime'
+# }
 
-include pow
+# include pow
 
-include imagemagick
-include memcached
-include mysql
+# include imagemagick
+# include memcached
+# include mysql
 
-include iterm2::stable
-include fish
+# include iterm2::stable
+# include fish
 
-include github_for_mac
+# include github_for_mac
 
-include sequel_pro
+# include sequel_pro
 
-class { 'osx::global::key_repeat_delay':
-  delay => 10
-}
+# class { 'osx::global::key_repeat_delay':
+#   delay => 10
+# }
 
-include vim
-vim::bundle { [
-  'scrooloose/syntastic',
-  'sjl/gundo.vim'
-]: }
+# include vim
+# vim::bundle { [
+#   'scrooloose/syntastic',
+#   'sjl/gundo.vim'
+# ]: }
 
-# Example of how you can manage your .vimrc
-file { "${vim::vimrc}":
-  target  => "/Users/${::boxen_user}/.dotfiles/.vimrc",
-  require => Repository["/Users/${::boxen_user}/.dotfiles"]
-}
+# # Example of how you can manage your .vimrc
+# file { "${vim::vimrc}":
+#   target  => "/Users/${::boxen_user}/.dotfiles/.vimrc",
+#   require => Repository["/Users/${::boxen_user}/.dotfiles"]
+# }
 
-# Or, simply,
-file { "${vim::vimrc}": ensure => exists }
+# # Or, simply,
+# file { "${vim::vimrc}": ensure => exists }
 
 
 Exec {
