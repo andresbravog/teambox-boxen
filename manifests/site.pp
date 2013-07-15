@@ -10,7 +10,6 @@ include osx::global::expand_print_dialog
 include osx::global::expand_save_dialog
 include osx::disable_app_quarantine
 include osx::no_network_dsstores
-include osx::global::key_repeat_delay
 include osx::global::key_repeat_rate
 include osx::universal_access::cursor_size
 
