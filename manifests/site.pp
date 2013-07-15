@@ -128,9 +128,6 @@ node default {
   git::config::global { 'alias.br':
     value  => 'branch'
   }
-  git::config::global { 'alias.funcdiff':
-    value  => '!sh -c "git show \"\$1:\$3\" | sed -n \"/^[^ \t].*\$4(/,/^}/p\" > .tmp1 && git show \"\$2:\$3\" | sed -n \"/^[^ \t].*\$4(/,/^}/p\" > .tmp2 && git diff --no-index .tmp1 .tmp2"'
-  }
 
   # fail if FDE is not enabled
   if $::root_encrypted == 'no' {
