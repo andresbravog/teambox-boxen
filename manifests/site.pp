@@ -26,12 +26,12 @@ include imagemagick
 include memcached
 include mysql
 
+# Apps
 include iterm2::stable
 include fish
-
 include github_for_mac
-
 include sequel_pro
+include chrome
 
 class { 'osx::global::key_repeat_delay':
   delay => 10
