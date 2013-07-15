@@ -23,9 +23,9 @@ require gcc
 
 # include pow
 
-# include imagemagick
+include imagemagick
 # include memcached
-# include mysql
+include mysql
 
 # include iterm2::stable
 # include fish
