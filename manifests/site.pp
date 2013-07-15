@@ -23,32 +23,32 @@ require gcc
 
 # include pow
 
-include imagemagick
+# include imagemagick
 # include memcached
-include mysql
+# include mysql
 
-# include iterm2::stable
-# include fish
+include iterm2::stable
+include fish
 
-# include github_for_mac
+include github_for_mac
 
-# include sequel_pro
+include sequel_pro
 
 # class { 'osx::global::key_repeat_delay':
 #   delay => 10
 # }
 
-# include vim
-# vim::bundle { [
-#   'scrooloose/syntastic',
-#   'sjl/gundo.vim'
-# ]: }
+include vim
+vim::bundle { [
+  'scrooloose/syntastic',
+  'sjl/gundo.vim'
+]: }
 
-# # Example of how you can manage your .vimrc
-# file { "${vim::vimrc}":
-#   target  => "/Users/${::boxen_user}/.dotfiles/.vimrc",
-#   require => Repository["/Users/${::boxen_user}/.dotfiles"]
-# }
+# Example of how you can manage your .vimrc
+file { "${vim::vimrc}":
+  target  => "/Users/${::boxen_user}/.dotfiles/.vimrc",
+  require => Repository["/Users/${::boxen_user}/.dotfiles"]
+}
 
 # # Or, simply,
 # file { "${vim::vimrc}": ensure => exists }
