@@ -32,6 +32,7 @@ include fish
 include github_for_mac
 include sequel_pro
 include chrome
+include firefox
 
 class { 'osx::global::key_repeat_delay':
   delay => 10
